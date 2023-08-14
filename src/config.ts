@@ -5,7 +5,7 @@ export const SITE: Site = {
   author: "Nicholas Ly",
   desc: "Nicholas Ly is a full-stack developer and software engineer based out of Chicago.",
   title: "Nicholas Ly",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "og-image.png",
   lightAndDarkMode: true,
   postPerPage: 4,
 };
