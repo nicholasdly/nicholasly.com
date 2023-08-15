@@ -2,6 +2,7 @@
 title: Running Journal I
 description: I'm currently trying to get into running. It's an extremely humbling sport.
 pubDatetime: 2023-06-20T00:47:00Z
+postSlug: running-1
 draft: false
 featured: true
 tags:
