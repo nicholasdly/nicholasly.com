@@ -86,7 +86,7 @@ export default (post: CollectionEntry<"blog">) => {
             </span>
 
             <span style={{ overflow: "hidden", fontWeight: "bold" }}>
-              {SITE.title}
+              nicholasly.com
             </span>
           </div>
         </div>
