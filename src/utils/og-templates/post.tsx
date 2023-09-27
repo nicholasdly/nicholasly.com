@@ -86,7 +86,7 @@ export default (post: CollectionEntry<"blog">) => {
             </span>
 
             <span style={{ overflow: "hidden", fontWeight: "bold" }}>
-              nicholasly.com
+              {new URL(SITE.website).hostname}
             </span>
           </div>
         </div>
