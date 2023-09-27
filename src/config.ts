@@ -3,7 +3,7 @@ import type { Site, SocialObjects } from "./types";
 export const SITE: Site = {
   website: "https://www.nicholasly.com/",
   author: "Nicholas Ly",
-  desc: "Nicholas Ly is a full-stack developer and software engineer based out of Chicago.",
+  desc: "Nicholas Ly is a full-stack developer and software engineer based out of the Chicagoland area.",
   title: "Nicholas Ly",
   lightAndDarkMode: true,
   postPerPage: 10,
@@ -13,7 +13,7 @@ export const LOCALE = []; // set to [] to use the environment default
 
 export const LOGO_IMAGE = {
   enable: false,
-  svg: false,
+  svg: true,
   width: 216,
   height: 46,
 };
