@@ -23,7 +23,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
   <Header />
   <main id="main-content">
     <section id="hero">
-      <h1>nicholasly.com</h1>
+      <h1 class="mr-2">nicholasly.com</h1>
       <a
         target="_blank"
         href="/rss.xml"
@@ -44,7 +44,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         Hi, I'm Nicholas Ly! I'm a full-stack developer and software engineer
         based out of Chicago. Currently, I'm a Web Development Intern at
         <LinkButton
-          className="hover:text-skin-accent underline underline-offset-4 decoration-dashed"
+          className="hover:text-skin-accent underline underline-offset-4"
           href="https://www.ostusa.com/"
         >
           OST
@@ -54,7 +54,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         I write about a variety of different topics here on my blog, both
         technical and not technical. Feel free to check out my socials or
         <LinkButton
-          className="hover:text-skin-accent underline underline-offset-4 decoration-dashed"
+          className="hover:text-skin-accent underline underline-offset-4"
           href="/about"
         >
           read more
@@ -97,16 +97,18 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       <h2>Recent Posts</h2>
       <ul>
         {
-          sortedPosts.map(
-            ({ data }, index) =>
-              index < 4 && (
-                <Card
-                  href={`/posts/${slugify(data)}`}
-                  frontmatter={data}
-                  secHeading={false}
-                />
-              )
-          )
+          sortedPosts
+            .filter(({ data }) => !data.featured)
+            .map(
+              ({ data }, index) =>
+                index < 4 && (
+                  <Card
+                    href={`/posts/${slugify(data)}`}
+                    frontmatter={data}
+                    secHeading={false}
+                  />
+                )
+            )
         }
       </ul>
       <div class="all-posts-btn-wrapper">

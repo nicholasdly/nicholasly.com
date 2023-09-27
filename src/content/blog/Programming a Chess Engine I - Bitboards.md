@@ -1,9 +1,9 @@
 ---
 title: Programming a Chess Engine I - Bitboards
 description: Let's build a chess engine from scratch in Rust, starting with representing the board using bitboards.
-pubDatetime: 2023-08-24T17:38:00Z
+pubDatetime: 2023-08-24
 draft: false
-featured: true
+featured: false
 tags:
   - devlog
   - chess

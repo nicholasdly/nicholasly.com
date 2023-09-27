@@ -1,18 +1,25 @@
 ---
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 
-export interface Props {
+interface StringTitleProp {
   pageTitle: string;
   pageDesc?: string;
 }
 
-const { pageTitle, pageDesc } = Astro.props;
+interface ArrayTitleProp {
+  pageTitle: [string, string];
+  pageDesc?: string;
+}
+
+export type Props = StringTitleProp | ArrayTitleProp;
+
+const { props } = Astro;
 ---
 
 <Breadcrumbs />
 <main id="main-content">
-  <h1>{pageTitle}</h1>
-  <p>{pageDesc}</p>
+  <h1>{props.pageTitle}</h1>
+  <p>{props.pageDesc}</p>
   <slot />
 </main>
 

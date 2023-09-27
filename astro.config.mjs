@@ -10,9 +10,7 @@ export default defineConfig({
   site: "https://nicholasly.com/", // replace this with your deployed domain
   integrations: [
     tailwind({
-      config: {
-        applyBaseStyles: false,
-      },
+      applyBaseStyles: false,
     }),
     react(),
     sitemap(),
@@ -38,4 +36,5 @@ export default defineConfig({
       exclude: ["@resvg/resvg-js"],
     },
   },
+  scopedStyleStrategy: "where",
 });

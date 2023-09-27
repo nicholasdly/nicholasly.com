@@ -1,7 +1,7 @@
 ---
 title: Running Journal II
 description: Approaching two months of semi-consistent running. Things are starting to look up!
-pubDatetime: 2023-08-11T20:53:00Z
+pubDatetime: 2023-08-11
 draft: false
 featured: false
 tags:

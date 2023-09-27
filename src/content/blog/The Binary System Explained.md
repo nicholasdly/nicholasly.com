@@ -1,9 +1,9 @@
 ---
 title: The Binary System Explained
 description: Understand the basics of the binary system and bitwise operations.
-pubDatetime: 2023-08-24T16:39:00Z
+pubDatetime: 2023-08-24
 draft: false
-featured: true
+featured: false
 tags:
   - math
   - programming

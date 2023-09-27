@@ -26,17 +26,5 @@ const FormattedDatetime = ({ datetime }: { datetime: string | Date }) => {
     day: "numeric",
   });
 
-  const time = myDatetime.toLocaleTimeString(LOCALE, {
-    hour: "numeric",
-    minute: "2-digit",
-  });
-
-  return (
-    <>
-      {date}
-      <span aria-hidden="true">&nbsp;&nbsp;</span>
-      <span className="sr-only">&nbsp;at&nbsp;</span>
-      {time}
-    </>
-  );
+  return <>{date}</>;
 };
