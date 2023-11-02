@@ -95,6 +95,8 @@ We can also write those binary numbers in hexadecimal just so we don't have to d
 0x000000000000FF00 = 0b0000000000000000000000000000000000000000000000001111111100000000
 ```
 
+## Implementation
+
 With that out of the way, we can start implementing these bitboards in Rust. Let's make a variable for each bitboard.
 
 ```rust

@@ -3,7 +3,7 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-Hi, I'm Nicholas Ly! I'm a full-stack developer and software engineer as both a profession and a hobby. Currently, I'm a web developer at [OST](https://www.ostusa.com/) building websites, APIs, and creative AI solutions.
+Hi, I'm Nicholas Ly! I'm a full-stack developer and software engineer as both a profession and a hobby. Currently, I'm a web developer at [Vervint](https://www.vervint.com/) building websites, APIs, and creative AI solutions.
 
 I graduated from Michigan State University with a bachelor's degree in computer science with a minor in business. During my time as an undergraduate, I participated in various programming clubs, won a hackathon, worked with Bosch for my senior project, and even wrote software for a NASA funded drone.
 
