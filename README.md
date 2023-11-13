@@ -1,4 +1,4 @@
-# nicholasly.com
+# nicholasly.com (v1)
 
 My personal website and blog, both for getting to know me better and to act as a public journal of sorts for sharing. Bug reports are welcome.
 
