@@ -23,7 +23,6 @@ import Footer from '../components/Footer.astro';
 
 	function updateNavbar(entries: IntersectionObserverEntry[]) {
 		for (const entry of entries) {
-			console.log(entry);
       if (entry.isIntersecting) {
         nav.forEach(link => link.classList.remove("active"));
 				nav.get(entry.target.id)?.classList.add("active");

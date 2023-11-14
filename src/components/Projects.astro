@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import SpotifyProfile from '../assets/spotify-profile.webp';
+import MinicardsImage from '../assets/minicards.webp';
 
 interface Project {
   image: { src: ImageMetadata, alt: string };
@@ -12,17 +12,11 @@ interface Project {
 
 const projects: Project[] = [
   {
-    image: { src: SpotifyProfile, alt: "An image" },
-    title: "Build a Spotify Connected App",
-    description: "Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.",
-    url: "",
-  },
-  {
-    image: { src: SpotifyProfile, alt: "An image" },
-    title: "Build a Spotify Connected App",
-    description: "Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.",
-    tools: ["React", "Express", "Spotify API", "Heroku"],
-    url: "",
+    image: { src: MinicardsImage, alt: "A flashcard study deck opened on minicards.com" },
+    title: "Minicards",
+    description: "A free, open source online flashcard web application inspired by the best aspects of Anki, Quizlet, and Tinycards.",
+    tools: ["React", "Next.js", "Tailwind CSS", "TypeScript", "MySQL", "Vercel"],
+    url: "https://minicards.nicholasly.com/",
   },
 ];
 ---
@@ -33,10 +27,10 @@ const projects: Project[] = [
       {projects.map(({ image, title, description, tools, url }) => (
         <li class="mb-12">
           <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-            <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg" />  
+            <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-zinc-200/50 dark:lg:group-hover:bg-zinc-800/50" />  
             <div class="z-10 sm:order-2 sm:col-span-6">
               <h3>
-                <a href={url} class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base" target="_blank" rel="noreferrer" aria-label={title}>
+                <a href={url} class="inline-flex items-baseline font-medium leading-tight text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-zinc-50 focus-visible:text-zinc-950 dark:focus-visible:text-zinc-50 group/link" target="_blank" rel="noreferrer" aria-label={title}>
                   <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block" />
                   <span>
                     <>{title}</>
@@ -54,22 +48,22 @@ const projects: Project[] = [
               <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
                 {tools?.map(tool => (
                   <li class="mr-1.5 mt-2">
-                    <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                    <div class="flex items-center rounded-full bg-zinc-600/10 dark:bg-zinc-400/10 px-3 py-1 text-xs font-medium leading-5 text-zinc-600 dark:text-zinc-400 ">
                       {tool}
                     </div>
                   </li>
                 ))}
               </ul>
             </div>
-            <Image src={image.src} alt={image.alt} class="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1" />
+            <Image src={image.src} alt={image.alt} class="rounded border-2 border-zinc-800/10 dark:border-zinc-200/10 transition group-hover:border-zinc-800/30 dark:group-hover:border-zinc-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1" />
           </div>
         </li>
       ))}
     </ul>
-    <div class="mt-12">
-      <a href="/archive" class="inline-flex items-center leading-tight text-slate-200 font-semibold group" aria-label="View Full Project Archive">
+    <!-- <div class="mt-12">
+      <a href="/archive" class="inline-flex items-center leading-tight text-zinc-800 dark:text-zinc-200 font-semibold group" aria-label="View Full Project Archive">
         <span>
-          <span class="border-b border-transparent pb-px transition group-hover:border-teal-300 motion-reduce:transition-none">
+          <span class="border-b border-transparent pb-px transition group-hover:border-zinc-700 dark:group-hover:border-zinc-300 motion-reduce:transition-none">
             View Full Project Archive
           </span>
           <span class="whitespace-nowrap">
@@ -79,6 +73,6 @@ const projects: Project[] = [
           </span>
         </span>
       </a>
-    </div>
+    </div> -->
   </div>
 </section>
