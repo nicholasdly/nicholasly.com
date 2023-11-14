@@ -1,43 +1,14 @@
 ---
-import Hr from "./Hr.astro";
-import Socials from "./Socials.astro";
-
-const currentYear = new Date().getFullYear();
-
-export interface Props {
-  noMarginTop?: boolean;
-}
-
-const { noMarginTop = false } = Astro.props;
+import Link from "./Link.astro";
 ---
 
-<footer class={`${noMarginTop ? "" : "mt-auto"}`}>
-  <Hr noPadding />
-  <div class="footer-wrapper">
-    <Socials centered />
-    <div class="copyright-wrapper">
-      <span>Copyright &#169; {currentYear} All rights reserved.</span>
-    </div>
-  </div>
+<footer class="max-w-md mt-16 text-sm text-zinc-500">
+  <p>
+    Built with
+    <Link href="https://astro.build/" class="font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300 focus-visible:text-zinc-700 dark:focus-visible:text-zinc-300">Astro</Link>
+    and
+    <Link href="https://tailwindcss.com/" class="font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300 focus-visible:text-zinc-700 dark:focus-visible:text-zinc-300">Tailwind CSS</Link>,
+    deployed with
+    <Link href="https://vercel.com/" class="font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300 focus-visible:text-zinc-700 dark:focus-visible:text-zinc-300">Vercel</Link>.
+  </p>
 </footer>
-
-<style>
-  footer {
-    @apply w-full;
-  }
-  .footer-wrapper {
-    @apply flex flex-col items-center justify-between py-6 sm:flex-row-reverse sm:py-4;
-  }
-  .link-button {
-    @apply my-1 p-2 hover:rotate-6;
-  }
-  .link-button svg {
-    @apply scale-125;
-  }
-  .copyright-wrapper {
-    @apply my-2 flex flex-col items-center whitespace-nowrap sm:flex-row;
-  }
-  .separator {
-    @apply hidden sm:inline;
-  }
-</style>
