@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /*
+    Since this website is just built using Astro and Tailwind CSS, we need to manually
+    define an optimal fallback font in CSS to reduce cumulative layout shift (CLS).
+  */
+  @font-face {
+    font-family: "Inter Fallback";
+    ascent-override: 90.20%;
+    descent-override: 22.48%;
+    line-gap-override: 0.00%;
+    size-adjust: 107.40%;
+    src: local("Arial");
+  }
+}
