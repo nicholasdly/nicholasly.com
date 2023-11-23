@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+
+  .badge {
+    @apply flex items-center rounded-full bg-zinc-600/10 dark:bg-zinc-400/10 px-3 py-1 text-xs font-medium leading-5;
+  }
+
   /*
     Since this website is just built using Astro and Tailwind CSS, we need to manually
     define an optimal fallback font in CSS to reduce cumulative layout shift (CLS).
