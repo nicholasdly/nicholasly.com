@@ -1,27 +1,40 @@
 ---
-import '@fontsource-variable/inter';
-import '../styles/base.css';
-import Header from "../components/Header.astro";
+import Header from '../components/Header.astro';
+import "../styles/globals.css";
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
+
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-
-		<title>Nicholas Ly</title>
-		<meta name="description" content="Nicholas Ly is a software engineer who builds performant, inclusive products and creative solutions for the web." />
-		<meta name="author" content="Nicholas Ly" />
+		
+		<title>{title}</title>
+	
+		<script is:inline>
+		  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			document.documentElement.classList.add('dark')
+		  } else {
+			document.documentElement.classList.remove('dark')
+		  }
+		</script>
 	</head>
-	<body class="bg-zinc-100 text-zinc-600 dark:bg-zinc-900 dark:text-zinc-400 leading-relaxed antialiased">
-		<div class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
-			<div class="lg:flex lg:justify-between lg:gap-4">
-				<Header />
-				<slot />
-			</div>
-		</div>
+
+	<body class="antialiased dark:bg-neutral-900 dark:text-white mb-40 m-6">
+		<main class="flex flex-col md:max-w-2xl mx-auto">
+			<Header />
+			<slot />
+		</main>
 	</body>
+
 </html>
