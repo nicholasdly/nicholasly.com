@@ -1,41 +1,32 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import About from '../components/About.astro';
-import Experience from '../components/Experience.astro';
-import Projects from '../components/Projects.astro';
-import Footer from '../components/Footer.astro';
+import Link from '../components/Link.astro';
+import Photos from '../components/Photos.astro';
+import Social from '../components/Social.astro';
 ---
 
-<Layout>
-	<main class="pt-24 lg:w-1/2 lg:py-24">
-		<About />
-		<Experience />
-		<Projects />
-		<Footer />
-	</main>
+<Layout title="Nicholas Ly">
+	<h1 class="font-medium text-2xl mb-8">
+		hey, I'm nick 👋
+	</h1>
+	<p>
+		I'm a software engineer both by profession and by hobby. I currently work
+		as a Web Developer at <Link href="https://vervint.com/">Vervint</Link>,
+		where I've been building production-grade web applications and APIs for a
+		variety of great clients.
+	</p>
+	<Photos />
+	<p>
+		I work on a variety of open-source projects outside of my usual work
+		hours, and I especially love to build with modern and cutting edge tools.
+		I love the learning process, and I'm passionate about sharing everything I
+		know.
+	</p>
+	<div class="my-8 flex flex-col sm:flex-row gap-2 sm:gap-8 not-prose">
+		<Social href="https://www.linkedin.com/in/nicholasdly/">connect with me on linkedin</Social>
+		<Social href="https://github.com/nicholasdly">follow me on github</Social>
+	</div>
+	<p>
+		I enjoy sponsoring undergraduate organizations filled with passionate young developers, and happily advise students of all ages.
+	</p>
 </Layout>
-
-<script>
-  const nav = new Map<string, HTMLAnchorElement>();
-  nav.set('about', document.getElementById('nav-about') as HTMLAnchorElement);
-  nav.set('experience', document.getElementById('nav-experience') as HTMLAnchorElement);
-  nav.set('projects', document.getElementById('nav-projects') as HTMLAnchorElement);
-
-	function updateNavbar(entries: IntersectionObserverEntry[]) {
-		for (const entry of entries) {
-      if (entry.isIntersecting) {
-        nav.forEach(link => link.classList.remove("active"));
-				nav.get(entry.target.id)?.classList.add("active");
-      }
-    }
-	}
-
-  const observer = new IntersectionObserver(updateNavbar, {
-    rootMargin: "0px",
-		threshold: 1.0,
-  });
-
-  observer.observe(document.getElementById('about') as HTMLElement);
-  observer.observe(document.getElementById('experience') as HTMLElement);
-  observer.observe(document.getElementById('projects') as HTMLElement);
-</script>
