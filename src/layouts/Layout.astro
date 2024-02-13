@@ -33,7 +33,9 @@ const { title } = Astro.props;
 	<body class="antialiased dark:bg-neutral-900 dark:text-white mb-40 m-6">
 		<main class="flex flex-col md:max-w-2xl mx-auto">
 			<Header />
-			<slot />
+			<section class="prose prose-neutral dark:prose-invert text-pretty">
+				<slot />
+			</section>
 		</main>
 	</body>
 
