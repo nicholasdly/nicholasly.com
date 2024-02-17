@@ -71,7 +71,11 @@ const projects = [
         <tr>
           <td>{project.year}</td>
           <td class="text-base">
-            <Link href={project.href}>{project.name}</Link>
+            {project.href ? (
+              <Link href={project.href}>{project.name}</Link>
+            ) : (
+              <span class="font-medium">{project.name}</span>
+            )}
           </td>
           <td class="hidden sm:block">
             <ul class="flex flex-wrap not-prose">
