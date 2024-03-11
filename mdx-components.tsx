@@ -1,4 +1,4 @@
-import { MarkdownHeading } from '@/components/heading';
+import { h1, h2, h3 } from '@/components//markdown/headings';
 import type { MDXComponents } from 'mdx/types';
 
 // No idea why I have to put in the root directory for this work.
@@ -6,7 +6,9 @@ import type { MDXComponents } from 'mdx/types';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
-    h1: MarkdownHeading,
+    h1,
+    h2,
+    h3,
     ...components,
   };
 }
