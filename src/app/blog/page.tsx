@@ -9,6 +9,11 @@ type Post = {
   publishDate: string;
 };
 
+export function formatDateString(str: string) {
+  const date = new Date(str);
+  return date.toLocaleDateString('en-US', {dateStyle: 'full', timeZone: 'UTC'});
+}
+
 async function getPosts(): Promise<Post[]> {
   const dirents = await readdir("./src/app/blog", { withFileTypes: true });
   const slugs = dirents.filter((dirent) => dirent.isDirectory());
@@ -27,11 +32,6 @@ async function getPosts(): Promise<Post[]> {
 
 export default async function BlogPage() {
   const posts = await getPosts();
-
-  const formatDateString = (str: string) => {
-    const date = new Date(str);
-    return date.toLocaleDateString('en-US', {dateStyle: 'full', timeZone: 'UTC'});
-  };
 
   return (
     <section className="prose prose-neutral dark:prose-invert text-pretty">

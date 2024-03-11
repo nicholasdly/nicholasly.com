@@ -1,0 +1,40 @@
+import MdxLayout from "@/components/mdx-layout";
+import Title from "@/components/title";
+import { formatDateString } from "../page";
+
+export const metadata = {
+  title: "Simplifying context injections and RAG for LLMs",
+  publishDate: "2024-03-10",
+};
+
+<Title
+  title="Simplifying context injections and RAG for LLMs"
+  date={formatDateString(metadata.publishDate)}
+/>
+
+Although GPT and other large language models (LLMs) are extremely powerful, they are general
+purpose. They were trained on millions of lines of text with the goal to understand human language,
+and while they have succeeded with that, their vast amount of general knowledge is both a strength
+and a weakness. If you were to ask GPT a question about your own information, notes, or product, it
+will most likely answer incorrectly due to the fact that it has not been trained on that
+information.
+
+There are two primary ways to get around this: fine tuning the model, or utilizing context
+injection. Both methods have their own unique pros and cons, but context injection will almost
+always outperform fine tuning when it comes to generating accurate, factual responses.
+
+## Context injection
+
+Context injection, or retrieval-augmented generation (RAG), is the process of
+optimizing the output of an LLM so that it references an authoritative knowledge base outside of its
+original training data.
+
+More specifically, context injection is a strategy of prompt engineering that allows us to directly
+"inject" contextual information into the prompt(s) we provide an LLM, manipulating how it responds
+to future questions.
+
+Unless you specify differently, context injection will cause the LLM to respond 
+
+export default function MdxPage({ children }) {
+  return <MdxLayout>{children}</MdxLayout>;
+}
