@@ -1,4 +1,7 @@
 import "@/styles/globals.css";
+import "@code-hike/mdx/dist/index.css";
+import "@/styles/github-from-css.css";
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";

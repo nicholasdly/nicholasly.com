@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Makes copy button for code blocks on blog posts only visible on hover. */
+.ch-codeblock .ch-code-button {
+  display: none;
+}
+.ch-codeblock:hover .ch-code-button {
+  display: block;
+}
