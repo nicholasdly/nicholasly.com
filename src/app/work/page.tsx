@@ -1,10 +1,10 @@
 import Anchor from "@/components/anchor";
-import Heading from "@/components/heading";
+import Title from "@/components/title";
 
 export default function WorkPage() {
   return (
     <section className="prose prose-neutral dark:prose-invert text-pretty">
-      <Heading text="my work 👨‍💻" />
+      <Title title="my work 👨‍💻" />
       <p>
         I&apos;m on a mission to build aesthetic and simple applications that don&apos;t
         skimp on performance. I strongly believe everyone should enjoy the

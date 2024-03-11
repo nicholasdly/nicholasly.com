@@ -2,12 +2,12 @@ import Link from "next/link";
 import Gallery from "../components/gallery";
 import { ArrowIcon } from "../components/icons";
 import Anchor from "@/components/anchor";
-import Heading from "@/components/heading";
+import Title from "@/components/title";
 
 export default function HomePage() {
   return (
     <section className="prose prose-neutral dark:prose-invert text-pretty">
-      <Heading text="hey, I'm nick 👋" />
+      <Title title="hey, I'm nick 👋" />
       <p>
         I&apos;m a software engineer both by profession and by hobby. I currently work
         as a Web Developer at <Anchor href="https://vervint.com/">Vervint</Anchor>,

@@ -1,5 +1,5 @@
 import Anchor from "@/components/anchor";
-import Heading from "@/components/heading";
+import Title from "@/components/title";
 
 const projects = [
   {
@@ -55,7 +55,7 @@ const projects = [
 export default function ProjectsPage() {
   return (
     <section className="prose prose-neutral dark:prose-invert text-pretty">
-      <Heading text="my projects 🚀" />
+      <Title title="my projects 🚀" />
       <table className="table-fixed">
         <thead>
           <tr>

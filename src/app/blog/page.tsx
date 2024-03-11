@@ -1,4 +1,4 @@
-import Heading from "@/components/heading";
+import Title from "@/components/title";
 import { readdir } from "fs/promises";
 import Link from "next/link";
 
@@ -35,7 +35,7 @@ export default async function BlogPage() {
 
   return (
     <section className="prose prose-neutral dark:prose-invert text-pretty">
-      <Heading text="my blog 📝" />
+      <Title title="my blog 📝" />
       <ul className="not-prose">
         {posts.map((post) => (
           <li key={post.slug} className="mb-5">
