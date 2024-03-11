@@ -1,0 +1,14 @@
+import MdxLayout from '@/components/mdx-layout';
+
+export const metadata = {
+  title: "Hello world",
+  publishDate: "2024-01-01",
+};
+
+# Simplifying context injections for LLMs
+
+Welcome to my blog!
+
+export default function MDXPage({ children }) {
+  return <MdxLayout>{children}</MdxLayout>;
+}

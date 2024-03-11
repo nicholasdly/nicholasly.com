@@ -17,6 +17,12 @@ export default function Header() {
               work
             </Link>
             <Link
+              href="/blog"
+              className="py-1 hover:underline underline-offset-2 decoration-neutral-500"
+            >
+              blog
+            </Link>
+            <Link
               href="/projects"
               className="py-1 hover:underline underline-offset-2 decoration-neutral-500"
             >

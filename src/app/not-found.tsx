@@ -1,17 +1,12 @@
-import Header from "@/components/header";
+import Heading from "@/components/heading";
 
-export default function NotFound() {
+export default function NotFoundPage() {
   return (
-    <main className="flex flex-col md:max-w-2xl mx-auto mb-40">
-      <Header />
-      <section className="prose prose-neutral dark:prose-invert text-pretty">
-        <h1 className="font-medium text-2xl mb-8">
-          error 404 🫣
-        </h1>
-        <p>
-          uh oh! looks like this page doesn&apos;t exist...
-        </p>
-      </section>
-    </main>
+    <section className="prose prose-neutral dark:prose-invert text-pretty">
+      <Heading text="error 404 🫣" />
+      <p>
+        uh oh! looks like this page doesn&apos;t exist...
+      </p>
+    </section>
   );
 }

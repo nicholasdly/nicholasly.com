@@ -5,7 +5,7 @@ interface ExternalProps {
   children: Readonly<React.ReactNode>;
 }
 
-export default function External({ href, children }: ExternalProps) {
+export default function Anchor({ href, children }: ExternalProps) {
   return (
     <Link
       href={href}

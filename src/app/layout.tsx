@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from '@vercel/analytics/react';
+import Header from "@/components/header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased dark:bg-neutral-900 dark:text-white m-6`}>
-        {children}
+        <main className="flex flex-col md:max-w-2xl mx-auto mb-40">
+          <Header />
+          {children}
+        </main>
         <SpeedInsights />
         <Analytics />
       </body>

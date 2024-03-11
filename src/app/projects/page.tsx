@@ -1,5 +1,5 @@
-import External from "@/components/external";
-import Header from "@/components/header";
+import Anchor from "@/components/anchor";
+import Heading from "@/components/heading";
 
 const projects = [
   {
@@ -52,50 +52,45 @@ const projects = [
   },
 ]
 
-export default function Work() {
+export default function ProjectsPage() {
   return (
-    <main className="flex flex-col md:max-w-2xl mx-auto mb-40">
-      <Header />
-      <section className="prose prose-neutral dark:prose-invert text-pretty">
-        <h1 className="font-medium text-2xl mb-8">
-          my projects 🚀
-        </h1>
-        <table className="table-fixed">
-          <thead>
-            <tr>
-              <th className="w-16">Year</th>
-              <th className="w-56">Project Name</th>
-              <th className="hidden sm:block">Built with</th>
+    <section className="prose prose-neutral dark:prose-invert text-pretty">
+      <Heading text="my projects 🚀" />
+      <table className="table-fixed">
+        <thead>
+          <tr>
+            <th className="w-16">Year</th>
+            <th className="w-56">Project Name</th>
+            <th className="hidden sm:block">Built with</th>
+          </tr>
+        </thead>
+        <tbody>
+          {projects.map((project, index) => (
+            <tr key={index}>
+              <td>{project.year}</td>
+              <td className="text-base">
+                {project.href ? (
+                  <Anchor href={project.href}>{project.name}</Anchor>
+                ) : (
+                  <span className="font-medium">{project.name}</span>
+                )}
+              </td>
+              <td className="hidden sm:block">
+                <ul className="flex flex-wrap not-prose">
+                  {project.tools.map((tool, i) => (
+                    <li
+                      key={i}
+                      className="mr-2 rounded-md bg-neutral-100 dark:bg-neutral-800 px-2 py-1 mb-1"
+                    >
+                      {tool}
+                    </li>
+                  ))}
+                </ul>
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            {projects.map((project, index) => (
-              <tr key={index}>
-                <td>{project.year}</td>
-                <td className="text-base">
-                  {project.href ? (
-                    <External href={project.href}>{project.name}</External>
-                  ) : (
-                    <span className="font-medium">{project.name}</span>
-                  )}
-                </td>
-                <td className="hidden sm:block">
-                  <ul className="flex flex-wrap not-prose">
-                    {project.tools.map((tool, i) => (
-                      <li
-                        key={i}
-                        className="mr-2 rounded-md bg-neutral-100 dark:bg-neutral-800 px-2 py-1 mb-1"
-                      >
-                        {tool}
-                      </li>
-                    ))}
-                  </ul>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </section>
-    </main>
+          ))}
+        </tbody>
+      </table>
+    </section>
   );
 }
