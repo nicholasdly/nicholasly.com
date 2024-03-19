@@ -25,7 +25,7 @@ export default function Home() {
           I love the learning process, and I&apos;m passionate about sharing everything I
           know.
         </p>
-        <div className="my-8 flex flex-col sm:flex-row gap-2 sm:gap-8 not-prose">
+        <div className="my-8 ml-5 flex flex-col gap-2 not-prose">
           <Link
             href="https://www.linkedin.com/in/nicholasdly/"
             target="_blank"
@@ -46,6 +46,17 @@ export default function Home() {
             <ArrowIcon />
             <span className="group-hover:underline underline-offset-2 decoration-neutral-500">
               follow me on github
+            </span>
+          </Link>
+          <Link
+            href="https://polar.sh/nicholasdly"
+            target="_blank"
+            rel="noopener"
+            className="flex items-center gap-0.5 text-black dark:text-white font-medium group"
+          >
+            <ArrowIcon />
+            <span className="group-hover:underline underline-offset-2 decoration-neutral-500">
+              support my work on polar
             </span>
           </Link>
         </div>
