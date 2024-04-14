@@ -1,0 +1,138 @@
+import Title from "@/components/title";
+import { formatDateString } from "../../page";
+
+export const metadata = {
+  title: "Simplifying context injections and RAG for LLMs",
+  publishDate: "2024-03-10",
+  // modifiedDate: "2024-03-16",
+};
+
+<Title
+  title="Simplifying context injections and RAG for LLMs"
+  publishDate={formatDateString(metadata.publishDate)}
+/>
+
+{/* ***This post was edited on {formatDateString(metadata.modifiedDate)}.*** */}
+
+Although GPT and other large language models (LLMs) are extremely powerful, they are general
+purpose. They were trained on millions of lines of text with the goal to understand human language,
+and while they have succeeded with that, their vast amount of general knowledge is both a strength
+and a weakness. If you were to ask GPT a question about your own information, notes, or product, it
+will most likely answer incorrectly due to the fact that it has not been trained on that
+information.
+
+There are two primary ways to get around this: fine tuning the model, or utilizing context
+injection. Both methods have their own unique pros and cons, but context injection is the popular
+choice due to its ability to use updated data in realtime.
+
+Building your own "ChatGPT" using your own information is pretty straightforward, and only involves
+four core processes:
+
+1. Parsing your knowledge base into subsections.
+2. Generating and storing embeddings for each subsection.
+3. Finding the most relevant subsections related to a query.
+4. Communicating the relevant information to a model.
+
+In this blog post, I'll be going over each step at a high level to help simplify the process. Don't
+worry if you aren't a technical person, there won't be any code.
+
+## Context injection vs. fine tuning
+
+**Context injection**, or retrieval-augmented generation (RAG), is the process of
+optimizing the output of an LLM so that it references an authoritative knowledge base outside of its
+original training data.
+
+More specifically, context injection is a strategy of prompt engineering that allows us to directly
+"inject" contextual information into the prompt(s) we provide to a model, manipulating how it
+responds to future questions.
+
+**Fine tuning** is the process of taking a pretrained model, such as GPT-4, and further training it
+on a smaller, targeted data set. This maintains the original capabilities of a pretrained model,
+while adapting it to suit more specialized use cases.
+
+Using context injection, you can specifically tell the model to respond using only the information
+you provide it. This approach saves time and resources compared to fine tuning, since you do not
+need to go through the tedious process of fine tuning your model every time there are changes to
+your knowledge base.
+
+## Parsing your knowledge base
+
+> Your data is more important than the specific toolset.
+
+Before you can jump into the more technical processes, you have to fully understand how you want to
+break down your knowledge base. Your approach to parsing this information can differ significantly
+depending on a variety of reasons, such as how your it is stored, where it is stored, how it is
+formatted.
+
+We could parse all of the data ourselves using techniques we come up with, but lets not reinvent the
+wheel. There are an abundance of performant parsing tools and libraries, such as
+[unified](https://unifiedjs.com/), that compiles Markdown into a syntax tree we can easily use to
+process our data.
+
+Plain text, Markdown, PDF, Microsoft Word documents, and more, can all be parsed in their own ways.
+All that matters is that our data is structured so that it can be easily separated into sections
+that generally isolate differing topics. Keeping different topics isolated is incredibly important
+to optimize performance and accuracy, since each section will be represented as unique embeddings
+and therefore will be searched upon by the semantics of the section.
+
+## Generating embeddings
+
+> Embeddings are a way to represent text, images, or other types of media as vectors, a form that
+machine learning models can easily process.
+
+Generating text embeddings is a straightforward process, and involves using an text embedding model.
+There are a lot of options to choose from, all with varying performance. For example, a solid choice
+would be OpenAI's third generation text embedding models, `text-embedding-3-small` and
+`text-embedding-3-large`, which are both performant, generously priced, and have an easy to use API.
+
+OpenAI's models will do perfectly fine for most people, and you can totally move on to the next
+section. For those of you who are interested in a bit more detail, there are definitely more factors
+to consider when choosing a embedding model that you may be interested in:
+
+- Do you want to use a free or open source model?
+- Do you want to self host your model?
+- Do you want to avoid relying on someone else's API?
+- Do you want to avoid vendor lock-in?
+- Do you want to be able to use the model offline?
+- Maybe you just want to use the absolute best performant model?
+
+These are all great questions to ask yourself when building a project that depends on a text
+embedding model, and while I can jump into the rabbit hole that is the embedding model ecosystem,
+I highly recommend watching
+[$0 Embeddings (OpenAI vs. free & open source)](https://www.youtube.com/watch?v=QdDoFfkVkcw), a
+technical video by [Greg Richardson](https://twitter.com/ggrdson).
+
+## Storing and querying embeddings
+
+Now that you have parsed your knowledge base into sections and converted each section to embeddings,
+you have to store those embeddings somewhere. Again, there are lots of viable options, but a common
+and performant choice would be a vector database. There are many paid database services, such as
+[Supabase](https://supabase.com/vector), [Pinecone](https://www.pinecone.io/), and
+[Upstash](https://upstash.com/), which provide an improved experience at a cost. You can also use
+your own database.
+
+[PostgreSQL](https://www.postgresql.org/) is an open source relational database that can be self
+hosted at no cost. When combined with the [pgvector](https://github.com/pgvector/pgvector)
+extension, you are able to store vectors and utilize various predefined algorithms to query the
+database by semantic similarity.
+
+## Communicating with a large language model
+
+> Prompt engineering is the practice of designing inputs for generative AI tools that will produce
+optimal outputs.
+
+It's extremely important we communicate to the LLM how we want it to behave, and that is done via
+prompt engineering.
+
+The way to communicate with an LLM in code is through a series of messages. This works just like any
+other conversation, and each messag
+
+## Expanding the final product
+
+Let's walk through an example of everything we've discussed so far. Let's say our application is an
+AI assistant that is able to answer questions about information in our knowledge base.
+
+When a user asks a question, we first need to convert the question into
+embeddings, and then query our vector database, sorting the results by relevancy
+using [cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity), which is predefined as
+an operator by pgvector.
