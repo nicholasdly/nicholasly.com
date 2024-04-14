@@ -22,14 +22,6 @@ export default function Header() {
             >
               projects
             </Link>
-            <Link
-              href="https://polar.sh/nicholasdly/posts"
-              target="_blank"
-              rel="noopener"
-              className="py-1 hover:underline underline-offset-2 decoration-neutral-500"
-            >
-              blog
-            </Link>
         </nav>
     </header>
   );
