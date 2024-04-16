@@ -18,6 +18,10 @@ export default function Home() {
           where I&apos;ve been building production-grade web applications and APIs for a
           variety of great clients.
         </p>
+        <p>
+          Recently, I&apos;ve been building using embeddings and retrieval
+          augmented generation to build powerful AI applications and improve my productivity.
+        </p>
         <Gallery />
         <p>
           I work on a variety of open-source projects outside of my usual work

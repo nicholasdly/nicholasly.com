@@ -35,6 +35,11 @@ export default function Work() {
             Microsoft Azure ecosystem with tools such as React, Angular, .NET, SQL,
             and NoSQL databases.
           </li>
+          <li>
+            With the incredible growth of AI applications, I&apos;ve also have the
+            opportunity to research, experiment, and build with AI—including an
+            internal retrieval augmented generation Slack bot.
+          </li>
         </ul>
         <hr className="my-6 border-neutral-200 dark:border-neutral-700" />
         <h2 className="font-medium text-xl mb-1">NASA - National Aeronautics and Space Administration</h2>
