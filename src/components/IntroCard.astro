@@ -1,0 +1,63 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div class="col-span-1 rounded-lg border p-6 md:col-span-3 md:row-span-4">
+  <div class="flex h-full w-full">
+    <div class="flex flex-col justify-between gap-4">
+      <div class="space-y-2">
+        <p class="text-pretty font-serif text-lg italic">hey there</p>
+        <p class="text-pretty text-xl">
+          I'm <span class="font-bold">Nicholas Ly</span>, a software engineer
+          developing production grade web applications and APIs for a variety of
+          great clients.
+        </p>
+        <p class="text-pretty text-xl">
+          Recently, I've been building AI applications using embeddings and
+          retrieval augmented generation.
+        </p>
+      </div>
+      <div class="flex gap-4">
+        <a
+          href="https://github.com/nicholasdly"
+          aria-label="github profile"
+          target="_blank"
+        >
+          <button
+            class="rounded-lg border px-5 py-2"
+            aria-label="github profile"
+          >
+            <Icon name="ri:github-fill" class="size-6" />
+            <span class="sr-only">GitHub Profile</span>
+          </button>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/nicholasdly/"
+          aria-label="linkedin profile"
+          target="_blank"
+        >
+          <button
+            class="rounded-lg border px-5 py-2"
+            aria-label="linkedin profile"
+          >
+            <Icon name="ri:linkedin-box-fill" class="size-6" />
+            <span class="sr-only">Linkedin Profile</span>
+          </button>
+        </a>
+        <a
+          href="https://polar.sh/nicholasdly"
+          aria-label="polar profile"
+          target="_blank"
+        >
+          <button
+            class="rounded-lg border px-5 py-2"
+            aria-label="polar profile"
+          >
+            <Icon name="iconoir:polar-sh" class="size-6" />
+            <span class="sr-only">Polar Profile</span>
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

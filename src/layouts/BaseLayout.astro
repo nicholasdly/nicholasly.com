@@ -1,0 +1,36 @@
+---
+import "@fontsource-variable/lora";
+import "@fontsource-variable/inter";
+
+interface Props {
+  title: string;
+  description: string;
+  author: string;
+}
+
+const { title, description, author } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.origin} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={author} />
+  </head>
+
+  <body class="antialiased">
+    <slot />
+  </body>
+</html>
