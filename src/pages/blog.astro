@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const posts = await Astro.glob("./blog/*.md");
+---
+
+<Layout>
+  <h1 id="read-my-blog">read my blog</h1>
+  <table class="text-lg">
+    <thead>
+      <tr class="text-left">
+        <th>Title</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {posts.map((post) => (
+        <tr>
+          <td>
+            <a href={post.url}>{post.frontmatter.title}</a>
+          </td>
+          <td>{new Date(post.frontmatter.date).toLocaleDateString()}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</Layout>
