@@ -15,13 +15,24 @@ const projects = await getCollection('projects')
 
     <section>
       <div class="min-w-full">
-        <h1 class="mb-4 text-3xl font-bold">Some more about us</h1>
-        <p class="prose prose-neutral mb-8 dark:prose-invert">
-          {SITE.TITLE} is an opinionated, no-frills static blogging template built
-          with Astro.
+        <h1 class="mb-4 text-3xl font-bold">More about me</h1>
+        <p class="prose prose-neutral mb-2 dark:prose-invert">
+          I've been passionate about computers since I was a kid, and fell in
+          love with the rabbit hole of programming in high school. Fast forward
+          some time, and I've graduated from Michigan State University with a
+          bachelor's degree in computer science, and have been working as a
+          software engineer since.
         </p>
-
-        <h2 class="mb-4 text-2xl font-semibold">Our Projects</h2>
+        <p class="prose prose-neutral mb-2 dark:prose-invert">
+          I'm currently working at Vervint, where I've had the privledge of
+          working closely with amazing customers such as Meijer and Zomedica.
+        </p>
+        <p class="prose prose-neutral mb-8 dark:prose-invert">
+          I'm extremely passionate about open-source software, and actively find
+          myself working on side projects all the time. As of late, I've been
+          building Bookclub, the privacy focused alternative to Goodreads.
+        </p>
+        <h2 class="mb-4 text-2xl font-semibold">My Projects</h2>
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => <ProjectCard project={project} />)}
         </div>

@@ -13,13 +13,12 @@ export type Link = {
 }
 
 export const SITE: Site = {
-  TITLE: 'astro-erudite',
-  DESCRIPTION:
-    'astro-erudite is a opinionated, no-frills blogging template—built with Astro, Tailwind, and shadcn/ui.',
-  EMAIL: 'jason@enscribe.dev',
+  TITLE: 'nicholasly.com',
+  DESCRIPTION: 'Nicholas Ly is a software engineer and web developer. ',
+  EMAIL: 'nick@nicholasly.com',
   NUM_POSTS_ON_HOMEPAGE: 2,
   POSTS_PER_PAGE: 3,
-  SITEURL: 'https://astro-erudite.vercel.app',
+  SITEURL: 'https://nicholasly.com/',
 }
 
 export const NAV_LINKS: Link[] = [
@@ -30,8 +29,8 @@ export const NAV_LINKS: Link[] = [
 ]
 
 export const SOCIAL_LINKS: Link[] = [
-  { href: 'https://github.com/jktrn', label: 'GitHub' },
-  { href: 'https://twitter.com/enscry', label: 'Twitter' },
-  { href: 'jason@enscribe.dev', label: 'Email' },
+  { href: 'https://github.com/nicholasdly', label: 'GitHub' },
+  { href: 'https://x.com/nichdly', label: 'Twitter' },
+  { href: 'nick@nicholasly.com', label: 'Email' },
   { href: '/rss.xml', label: 'RSS' },
 ]
